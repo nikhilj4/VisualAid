@@ -1,0 +1,59 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis for Accessibility</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-eye"></i> Image Analysis for Accessibility</h1>
+        <p>Upload an image for a detailed description and audio explanation designed for blind users.</p>
+    </header>
+    <main>
+        <section class="upload-section">
+            <label for="imageInput" class="upload-label" aria-label="Choose an image to upload">
+                <i class="fas fa-upload fa-2x"></i> Select Image
+            </label>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" aria-required="true">
+            <button onclick="uploadImage()" class="upload-btn" aria-label="Analyze the selected image">
+                <i class="fas fa-rocket fa-lg"></i> Describe Image
+            </button>
+            <div id="loading" class="loading" style="display: none;" role="alert" aria-live="assertive">
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+                <p>Analyzing your image... Please wait a moment.</p>
+            </div>
+        </section>
+        <section class="results" id="results" style="display: none;" aria-live="polite">
+            <h2><i class="fas fa-info-circle"></i> Image Details</h2>
+            <div class="result-box image-box">
+                <h3><i class="fas fa-camera fa-lg"></i> Uploaded Image</h3>
+                <img id="uploadedImage" src="" alt="Uploaded image for analysis">
+            </div>
+            <div class="result-box caption-box">
+                <h3><i class="fas fa-comment fa-lg"></i> Scene Description</h3>
+                <p id="caption"></p>
+            </div>
+            <div class="result-box ocr-box">
+                <h3><i class="fas fa-text-height fa-lg"></i> Extracted Text</h3>
+                <pre id="ocrText"></pre>
+            </div>
+            <div class="result-box explanation-box">
+                <h3><i class="fas fa-lightbulb fa-lg"></i> Detailed Explanation</h3>
+                <p id="explanation"></p>
+                <audio id="audioPlayer" controls aria-label="Listen to the explanation">
+                    <source id="audioSource" src="" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><i class="fas fa-cog"></i> © 2025 Accessible Image Analysis. Powered by xAI.</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

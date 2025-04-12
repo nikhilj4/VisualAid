@@ -1,0 +1,9 @@
+# requirements.txt
+flask==2.3.3
+transformers==4.44.2
+accelerate==0.33.0
+easyocr==1.7.1
+pillow==10.4.0
+gtts==2.5.3
+torch==2.4.1
+werkzeug==3.0.4

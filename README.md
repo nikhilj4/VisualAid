@@ -8,8 +8,3 @@ A web app that analyzes images to extract text, generate captions, provide expla
 - VS Code
 - Google Chrome (for testing)
 
-## Setup
-1. **Clone the repository**:
-   ```bash
-   git clone <your-repo-url>
-   cd image-analysis-app
